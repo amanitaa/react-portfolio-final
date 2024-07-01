@@ -1,0 +1,46 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 170px;
+    font-size: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    font-size: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.contact {
+    padding: 10px 20px;
+    border-radius: 40px;
+    background-color: #c92828;
+    font-size: 20px;
+    cursor: pointer;
+    color: white; 
+}
+
+.contact a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
