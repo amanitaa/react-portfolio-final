@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Repositories.css'
 import Loading from './Loading';
 import ProgrammingLanguages from './ProgrammingLanguages';
+import CopyToClipboard from './Clipgoard';
 
 function Repositories() {
   const [repos, setRepos] = useState([]);
@@ -13,7 +14,6 @@ function Repositories() {
     const fetchRepos = async () => {
       try {
         const response = await axios.get(`https://api.github.com/users/amanitaa/repos`);
-        console.log(response.data);
         setRepos(response.data);
         setLoading(false);
       } catch (err) {
@@ -36,7 +36,7 @@ function Repositories() {
                 <div className='repo-details'>Created at: {repo.created_at.split('T')[0]}</div>
                 <div className='repo-language'>Language: {repo.language} {<ProgrammingLanguages language={repo.language}/>}</div>
                 <div className='repo-details'>Forks: {repo.forks_count}</div>
-                <div className='repo-clone-url'>Clone with... <a href={repo.clone_url} className="repo-clone-url">{repo.clone_url}</a></div>
+                <div className='repo-clone-url'><CopyToClipboard text={repo.clone_url}/></div>
             </div>
             ))
         )}
